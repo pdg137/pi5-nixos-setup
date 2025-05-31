@@ -3,6 +3,10 @@ minimal configuration for the
 [nixos-raspberrypi](https://github.com/nvmd/nixos-raspberrypi) flake
 configuration by [nvmd](https://github.com/nvmd).
 
+My flake.nix comes from
+[nixos-raspberrypi-demo](https://github.com/nvmd/nixos-raspberrypi-demo)
+with modifications for simplicity.
+
 I don't know what I'm doing here and writing it up clearly is a way
 for me to learn.
 
