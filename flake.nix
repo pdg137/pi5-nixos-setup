@@ -160,7 +160,7 @@
 #        services = {
 #          xserver.enable = true;
 #          displayManager.sddm.enable = true;
-#          xserver.desktopManager.xfce.enable = true;
+#          xserver.desktopManager.plasma5.enable = true;
 #        };
 
         system.nixos.tags = let
@@ -173,7 +173,7 @@
       };
     in {
 
-      nixos-installer = nixos-raspberrypi.lib.nixosSystemFull {
+      rpi5 = nixos-raspberrypi.lib.nixosSystemFull {
         specialArgs = inputs;
         modules = [
           ({ config, pkgs, lib, nixos-raspberrypi, ... }: {
