@@ -1,6 +1,3 @@
-# nix-shell -p nixos-rebuild
-# nix build .#nixosConfigurations.rpi5.config.system.build.toplevel
-# nixos-rebuild switch --flake .#rpi5 --target-host root@10.33.1.204
 {
   description = ''
     Examples of NixOS systems' configuration for Raspberry Pi boards
@@ -47,6 +44,8 @@
         ];
       };
     });
+
+    installerImages = nixos-raspberrypi.installerImages.rpi5;
 
     nixosConfigurations = let
 
@@ -174,7 +173,7 @@
       };
     in {
 
-      rpi5 = nixos-raspberrypi.lib.nixosSystemFull {
+      nixos-installer = nixos-raspberrypi.lib.nixosSystemFull {
         specialArgs = inputs;
         modules = [
           ({ config, pkgs, lib, nixos-raspberrypi, ... }: {

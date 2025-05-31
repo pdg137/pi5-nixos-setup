@@ -1,6 +1,3 @@
-# Copy this to private.nix, then do
-# git add --intent-to-add private.nix
-# git update-index --assume-unchanged private.nix
 { config, lib, pkgs, ... }:
 
 {
