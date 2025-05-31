@@ -8,7 +8,6 @@
   '';
 
   nixConfig = {
-    bash-prompt = "\[nixos-raspberrypi-demo\] ➜ ";
     extra-substituters = [
       "https://nixos-raspberrypi.cachix.org"
     ];
@@ -19,7 +18,6 @@
   };
 
   inputs = {
-
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-raspberrypi = {
       url = "github:nvmd/nixos-raspberrypi/main";
@@ -139,7 +137,6 @@
 
       common-user-config = {config, pkgs, ... }: {
         imports = [
-          ./modules/nice-looking-console.nix
           users-config-stub
           network-config
           ./private.nix
@@ -160,6 +157,12 @@
           tree
           htop
         ];
+
+#        services = {
+#          xserver.enable = true;
+#          displayManager.sddm.enable = true;
+#          xserver.desktopManager.xfce.enable = true;
+#        };
 
         system.nixos.tags = let
           cfg = config.boot.loader.raspberryPi;
