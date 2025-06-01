@@ -18,6 +18,7 @@ for me to learn.
   extra-platforms = aarch64-linux
   experimental-features = nix-command flakes
   ```
+* emulated execution in your OS (e.g. install qemu-user-static on Ubuntu)
 * zstd (you can run `nix-shell -p zstd` for example)
 * [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 * 8GB+ microSD card
