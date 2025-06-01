@@ -15,7 +15,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-raspberrypi = {
       url = "github:nvmd/nixos-raspberrypi/main";
     };
@@ -31,20 +31,6 @@
     allSystems = nixpkgs.lib.systems.flakeExposed;
     forSystems = systems: f: nixpkgs.lib.genAttrs systems (system: f system);
   in {
-
-    devShells = forSystems allSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      default = pkgs.mkShell {
-        nativeBuildInputs = with pkgs; [
-          nil # lsp language server for nix
-          nixpkgs-fmt
-          nix-output-monitor
-          nixos-anywhere.packages.${system}.default
-        ];
-      };
-    });
-
     installerImages = nixos-raspberrypi.installerImages.rpi5;
 
     nixosConfigurations = let
@@ -157,11 +143,14 @@
           htop
         ];
 
-#        services = {
-#          xserver.enable = true;
-#          displayManager.sddm.enable = true;
+        services = {
+          xserver.enable = true;
+          xserver.excludePackages = [
+            pkgs.gst_all_1.gst-plugins-bad
+          ];
+#          xserver.displayManager.startx.enable = true;
 #          xserver.desktopManager.plasma5.enable = true;
-#        };
+        };
 
         system.nixos.tags = let
           cfg = config.boot.loader.raspberryPi;
@@ -172,6 +161,10 @@
         ];
       };
     in {
+      gst-plugins-bad = (import nixpkgs {
+        system = "x86_64-linux";
+        crossSystem = { config = "aarch64-linux"; };
+      }).gst_all_1.gst-plugins-bad;
 
       rpi5 = nixos-raspberrypi.lib.nixosSystemFull {
         specialArgs = inputs;
