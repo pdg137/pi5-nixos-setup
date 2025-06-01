@@ -119,11 +119,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746225872,
-        "narHash": "sha256-ySSk4r9Mq6dO2MYaik4vTU18sA17aHTSb2LsAFXdw3E=",
+        "lastModified": 1747747741,
+        "narHash": "sha256-LUOH27unNWbGTvZFitHonraNx0JF/55h30r9WxqrznM=",
         "owner": "nvmd",
         "repo": "nixos-images",
-        "rev": "33343fd9a237ed98df52e3611f833fdab729c358",
+        "rev": "cbbd6db325775096680b65e2a32fb6187c09bbb4",
         "type": "github"
       },
       "original": {
@@ -140,16 +140,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1747754643,
-        "narHash": "sha256-tbnDv8E8Vv7avlLz/rL3e1ghq2/MDNqdgpmzlHTIl9Y=",
-        "owner": "nvmd",
+        "lastModified": 1748811338,
+        "narHash": "sha256-lpEsejgUIQkDaZV1uzMhU+XdWCkCdg5bmYBKUKYR+/o=",
+        "owner": "pdg137",
         "repo": "nixos-raspberrypi",
-        "rev": "8e7791287af030ce83784b98da788875fc4be97e",
+        "rev": "a5bbb0e2710ef1c6fefbc5299c201dcdb4061fb3",
         "type": "github"
       },
       "original": {
-        "owner": "nvmd",
-        "ref": "main",
+        "owner": "pdg137",
+        "ref": "master",
         "repo": "nixos-raspberrypi",
         "type": "github"
       }
@@ -188,16 +188,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1746408827,
-        "narHash": "sha256-tqjFTkIm8xhHk36KSk3mCieEvWmFl7SWCVESGlcUFew=",
-        "owner": "nvmd",
+        "lastModified": 1748811121,
+        "narHash": "sha256-bWFZLQKTWJ3PxOKJkGUD92TJIQdR9qdaq1oDiLA3EEU=",
+        "owner": "pdg137",
         "repo": "nixpkgs",
-        "rev": "1473ad1795a4a4ea14fe636c464649b9b27d8cc8",
+        "rev": "cb3001fa9b5b81f1926001ce5d21458c9b946eb8",
         "type": "github"
       },
       "original": {
-        "owner": "nvmd",
-        "ref": "modules-with-keys-unstable",
+        "owner": "pdg137",
+        "ref": "modules-with-keys-unstable-disable-gst-plugins-bad",
         "repo": "nixpkgs",
         "type": "github"
       }

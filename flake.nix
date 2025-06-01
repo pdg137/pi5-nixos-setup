@@ -17,7 +17,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-raspberrypi = {
-      url = "github:nvmd/nixos-raspberrypi/main";
+      url = "github:pdg137/nixos-raspberrypi/master";
     };
 
     nixos-anywhere = {
@@ -145,9 +145,6 @@
 
         services = {
           xserver.enable = true;
-          xserver.excludePackages = [
-            pkgs.gst_all_1.gst-plugins-bad
-          ];
 #          xserver.displayManager.startx.enable = true;
 #          xserver.desktopManager.plasma5.enable = true;
         };
