@@ -93,6 +93,9 @@
         # allow nix-copy to live system
         nix.settings.trusted-users = [ "nixos" ];
 
+        # Flake system
+        nix.settings.experimental-features= [ "nix-command" "flakes" ];
+
         # We are stateless, so just default to latest.
         system.stateVersion = config.system.nixos.release;
       });
@@ -157,11 +160,11 @@
           htop
         ];
 
-#        services = {
-#          xserver.enable = true;
-#          displayManager.sddm.enable = true;
-#          xserver.desktopManager.plasma5.enable = true;
-#        };
+        services = {
+          xserver.enable = builtins.trace "${nixpkgs}" true;
+          displayManager.sddm.enable = true;
+          xserver.desktopManager.plasma5.enable = true;
+        };
 
         system.nixos.tags = let
           cfg = config.boot.loader.raspberryPi;
