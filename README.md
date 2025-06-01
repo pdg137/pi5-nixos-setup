@@ -53,17 +53,18 @@ for me to learn.
 
 ## Loading this nixos configuration
 
-1. `nixos-rebuild switch --flake . --target-host root@<ip>`
+1. `nixos-rebuild switch --flake .#rpi5 --target-host root@<ip>`
 2. Enter your root password twice.
 3. When it says "Done" you can reboot and everything will be configured as specified.
 
 Note: you can also run
 
 ```
-nix build .#nixosConfigurations.nixos-installer.config.system.build.toplevel
+nix build .#nixosConfigurations.rpi5.config.system.build.toplevel
 ```
 
-to build the system as a `result` link.
+to build the system as a `result` link. This might be useful, for
+example, to prevent it from getting garbage collected between builds.
 
 ## TODO
 
