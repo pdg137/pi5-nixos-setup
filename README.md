@@ -47,7 +47,7 @@ for me to learn.
 2. Copy `private_template.nix` to `private.nix` and edit with your private user configuration.
 3. Run these weird commands to make flakes work without having to add private.nix (!!!):
    ```
-   git add --intent-to-add private.nix
+   git add -f --intent-to-add private.nix
    git update-index --assume-unchanged private.nix
    ```
 4. Edit config as desired.
