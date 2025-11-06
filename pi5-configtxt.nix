@@ -5,6 +5,11 @@
     all = { # [all] conditional filter, https://www.raspberrypi.com/documentation/computers/config_txt.html#conditional-filters
 
       options = {
+        experimental-features = {
+          enable = true;
+          value = [ "nix-command" "flakes" ];
+        };
+
         # https://www.raspberrypi.com/documentation/computers/config_txt.html#enable_uart
         # in conjunction with `console=serial0,115200` in kernel command line (`cmdline.txt`)
         # creates a serial console, accessible using GPIOs 14 and 15 (pins 
