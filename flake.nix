@@ -229,6 +229,25 @@
                 inherit (kernelBundle) raspberrypifw;
               })
             ];
+
+            nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+            environment.systemPackages = with pkgs; [
+              file
+              git
+              htop
+              psmisc
+              lsof
+              openssl
+              wget
+              tmux
+              screen
+              ncdu
+              tree
+              emacs-nox
+              vim
+            ];
+
           })
 
         ];
